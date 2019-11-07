@@ -24,74 +24,27 @@ tags: [Python, Nginx, Django, Linux, web服务器, 环境搭建]
 
 ## 环境
 
-  
-![enter image description here](https://picasaweb.google.com/105969624975385667619/6756551244464833249#6756551245645573986 "双葫芦")
 服务器：腾讯云服务器
-
-  
-
 系统：CentOS7
-
-  
-
 *****
-
-  
-  
-  
-
 ## 流程
-
-  
-
 ### 基础模块安装
-
-  
-
 参考：[centos7下部署Django](https://www.cnblogs.com/levelksk/p/7921066.html)
 
-  
-
 ```bash
-
 yum gcc-c++
-
 ```
-
 （为centos系统增加编译功能）
-
-  
-
 ```bash
-
 yum install wget openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel
-
 ```
-
 （安装这些模块都是为了成功编译安装python3，防止出现各种异常）
-
-  
-
 ```bash
-
 yum install libxml*
-
 ```
-
-  
-
 (安装这个模块是为了让uwsig支持使用“-x"选项，能通过xml文件启动项目,我后来用的ini文件，这个就没有太大意义了)
-
-  
-
 ****
-
-  
-
 ### Python安装
-
-  
-
 Linux系统一般都自带Python2，我现在学习和使用的都是Python3的版本，所以先要安装新版本的Python3
 
   
@@ -599,6 +552,6 @@ C---D
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjAxNjI1MDAsLTM1MDI2MjA2MiwxNT
-ExNDA3OTE4XX0=
+eyJoaXN0b3J5IjpbLTExMDQ5MTMwMzIsLTEyMjAxNjI1MDAsLT
+M1MDI2MjA2MiwxNTExNDA3OTE4XX0=
 -->
