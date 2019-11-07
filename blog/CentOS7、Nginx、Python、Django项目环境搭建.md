@@ -563,7 +563,7 @@ include lanling_nginx.conf;
   
   
   
-  ![enter image description here](https://lh3.googleusercontent.com/cm5TU-aDgtvpP5dQMGf4Gbfj8EX0dxEAOn43HeQ1kuJw2TFbYbY-wfxbJc6ezKtsn13yzNmX2Q0)
+  
 
 [Django+uWSGI+Nginx原理详解](https://www.jianshu.com/p/1c50b15b143a)
 
@@ -599,5 +599,6 @@ C---D
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1MDI2MjA2MiwxNTExNDA3OTE4XX0=
+eyJoaXN0b3J5IjpbLTEyMjAxNjI1MDAsLTM1MDI2MjA2MiwxNT
+ExNDA3OTE4XX0=
 -->
