@@ -46,105 +46,39 @@ yum install libxml*
 ****
 ### Python安装
 Linux系统一般都自带Python2，我现在学习和使用的都是Python3的版本，所以先要安装新版本的Python3
-
-  
-
 在自己习惯的目录下下载安装包，个人喜欢在家目录下：
-
-  
-
 ```bash
-
 wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
-
 ```
-
-  
-
 下载完成后解压安装包：
-
-  
-
 ```bash
-
 tar -zxvf Python-3.7.4.tgz
-
 ```
-
-  
-
 进入解压后的Python-3.7.4文件夹，解析编译安装：
-
-  
-
 ```bash
-
 cd Python-3.7.4
-
 ./configure --prefix=/usr/local/python3
-
 make
-
 make install
-
 ```
-
-  
-
 为了方便Python3的使用，并且不影响Python2，建立软连接：
-
-  
-
 ```bash
-
 ln -s /usr/local/python3/bin/python3.7 /usr/bin/python3
-
 ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
-
 ```
-
-  
-
 （以上两个ln命令是为了方便在终端中直接使用python3和pip3命令）
-
-  
-
 在做这一步的时候遇到了找不到pip3目录的情况，我直接将`/usr/local/python3`目录删除，重新安装了一遍Python3就解决了。
-
-  
-
 ****
-
-  
-
 ### 给python3安装django和uwsgi以及配置启动项目的ini文件
-
-  
-
 建立网站的存放目录，我按个人习惯建立了`/home/www`目录，进入到目录下：
-
-  
-
 ```bash
-
 mkdir /home/www
-
 cd /home/www/
-
 ```
-
-  
-
 安装django、uwsgi
-
-  
-
 ```bash
-
 pip3 install django
-
 pip3 install uwsgi
-
 ```
 
   
@@ -552,6 +486,6 @@ C---D
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDQ5MTMwMzIsLTEyMjAxNjI1MDAsLT
-M1MDI2MjA2MiwxNTExNDA3OTE4XX0=
+eyJoaXN0b3J5IjpbMTI0MjM3MTEyNCwtMTIyMDE2MjUwMCwtMz
+UwMjYyMDYyLDE1MTE0MDc5MThdfQ==
 -->
