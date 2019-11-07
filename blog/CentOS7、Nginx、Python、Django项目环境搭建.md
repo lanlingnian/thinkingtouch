@@ -159,121 +159,53 @@ charset  utf-8;
 client_max_body_size 75M;
 location / {
 # uwsgi_pass是uWSGI提供的端口，根据uwsgi.ini文件中的socket配置填写
-
 # 如果是文件接口：
-
 uwsgi_pass  unix:///home/www/myproject.socket;
-
 # 如果是TCP接口：
-
 #uwsgi_pass  127.0.0.1:8997;
-
 # 该文件为Nginx针对uWSGI的解析文件，在Nginx配置目录下可找到
-
 include /usr/local/nginx/conf/uwsgi_params;
-
 }
-
 location /media/ {
-
 alias /home/www/lanling/media/;
-
 }
-
 # Django静态文件目录
-
 location /static/ {
-
 alias /home/www/lanling/static/;
-
 }
-
-  
-
 error_page  500  502  503  504 /50x.html;
-
 location = /50x.html {
-
 root  html;
-
 }
-
-  
-
 }
-
 ```
-
-  
-
 为了方便`nginx.conf`nginx配置总文件访问`myproject_nginx.conf`nginx子配置文件，将该文件的软连接放到nginx配置目录下：
-
-  
-
 ```bash
-
 ln -s /home/www/myproject_nginx.conf /usr/local/nginx/conf/myproject_nginx.conf
-
 ```
-
-  
-
 这样方便我们修改`nginx.conf`调用`myproject_nginx.conf`,我们在`nginx.conf`文件中的http{}中找位置添加：
-
-  
-
 ```conf
-
 include lanling_nginx.conf;
-
 ```
-
-  
-
 这样在运行nginx的时候就可以加载我们新建的子nginx配置文件了。
-
-  
-
 运行nginx：
-
-  
-
 进入/usr/local/nginx/sbin/目录
-
 执行`./nginx -t`命令先检查配置文件是否有错，没有错就执行以下命令：
-
 `./nginx`
-
-  
-
 > 附注：
-
 > 由于我们之前建立了新版本的nginx在`/usr/bin/`目录下的软连接，我们可以直接在任意目录下通过`nginx3`命令运行nginx：
-
 >
-
 > ```bash
-
 >  # 运行nginx：
-
 >  nginx3
-
 >  # 快速停止或关闭Nginx：
-
 >  nginx3 -s stop
-
 >  # 正常停止或关闭Nginx：
-
 >  nginx3 -s quit
-
 >  # 配置文件修改重装载命令：
-
 >  nginx3 -s reload
-
 > ```
-
-  
-
+ 
 启动nginx后我们就可以通过浏览器访问该服务器IP地址，访问web服务了。
 
   
@@ -342,6 +274,6 @@ C---D
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ4ODM2MTQ0LC0xMjIwMTYyNTAwLC0zNT
-AyNjIwNjIsMTUxMTQwNzkxOF19
+eyJoaXN0b3J5IjpbLTIwMzM3NTQ0NzYsLTEyMjAxNjI1MDAsLT
+M1MDI2MjA2MiwxNTExNDA3OTE4XX0=
 -->
