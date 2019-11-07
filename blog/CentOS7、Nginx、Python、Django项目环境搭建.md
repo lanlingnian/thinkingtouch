@@ -80,122 +80,48 @@ cd /home/www/
 pip3 install django
 pip3 install uwsgi
 ```
-
-  
-
 为了在终端中使用uwsgi命令，建立软连接：
-
-  
-
 ```bash
-
 ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi3
-
 ```
-
-  
-
 （这样就可以在终端使用`uwsgi3`命令调用uwsgi）
-
-  
-
 将django项目myproject放到`/home/www`目录下，这样就形成了`/home/www/myproject`目录,然后我将该项目的uwsgi启动文件放在`/home/www`目录下，命名为`uwsgi.ini`，编辑内容如下：
-
-  
-
 ```ini
-
 [uwsgi]
-
-  
-
 # Django相关的配置
-
 # 必须全部为绝对路径
-
 # 项目的路径
-
 chdir = /home/www/myproject
-
 # Django的wsgi文件
-
 module = myproject.wsgi
-
-  
-
 # uwsgi接口,提供给Nginx访问
-
 # file socket 文件接口
-
 socket = /home/www/myproject.socket
-
 # TCP socket TCP接口，与HTTP配置不同，外部无法访问
-
 #socket = 127.0.0.1:8997
-
-  
-
 # 直接做web服务器使用，端口开放，外部可直接访问
-
 http = 127.0.0.1:8000
-
-  
-
 # 进程相关的设置
-
 # 主进程
-
 master = true
-
 # 最大数量的工作进程
-
 processes = 10
-
 # 退出的时候是否清理环境
-
 vacuum = true
-
 daemonize=/var/log/spider_uwsgi.log
-
-  
-  
-
 ```
-
-  
-
 测试一下：
-
-  
-
 启动uWSGI：
-
-  
-
 ```bash
-
 uwsgi3 -i uwsgi.ini
-
 ```
-
-  
-
 然后就可以通过浏览器访问8000端口看到django项目首页了。
-
-  
-
 > 附注：
-
 >
-
 >  1. 建议测试完成后注释掉uwsgi.ini文件中的`http = 127.0.0.1:8000`,这样外网就不能直接访问uWSGI服务了。
-
 >
-
 >  2. 如何关闭uWSGI：
-
 > 通过ps，查看uwsgi相关进程
-
 >  `ps aux|grep uwsgi`
 
 > kill pid会发送SIGTERM，只会导致重启，而不是结束掉。需要发送SIGINT或SIGQUIT，对应着是INT才可以
@@ -486,6 +412,6 @@ C---D
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0MjM3MTEyNCwtMTIyMDE2MjUwMCwtMz
+eyJoaXN0b3J5IjpbMTQ1NzU2ODAxNiwtMTIyMDE2MjUwMCwtMz
 UwMjYyMDYyLDE1MTE0MDc5MThdfQ==
 -->
