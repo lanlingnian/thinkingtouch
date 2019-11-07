@@ -1,11 +1,7 @@
 ---
-
 title: CentOS7、Nginx、Python、Django项目环境搭建
-
 mathjax: true
-
 date: 2019/9/10 12:00:30
-
 categories:
 - 学习
 - 环境搭建
@@ -218,6 +214,6 @@ B---C
 C---D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTk3MDE5OTY0LC0xMjIwMTYyNTAwLC0zNT
-AyNjIwNjIsMTUxMTQwNzkxOF19
+eyJoaXN0b3J5IjpbLTg0ODIxNjcwOCwtMTIyMDE2MjUwMCwtMz
+UwMjYyMDYyLDE1MTE0MDc5MThdfQ==
 -->
