@@ -7,23 +7,12 @@ mathjax: true
 date: 2019/9/10 12:00:30
 
 categories:
-
 - 学习
-
 - 环境搭建
-
 tags: [Python, Nginx, Django, Linux, web服务器, 环境搭建]
-
 ---
-
-  
-
 最近想将自己的一个django项目发布到服务器上，本来网上已经有很多这个架构的文档了，但搭建环境过程中还是遇到了不少的坑，现以文本形式进行记录。
-
-  
-
 ## 环境
-
 服务器：腾讯云服务器
 系统：CentOS7
 *****
@@ -205,75 +194,30 @@ include lanling_nginx.conf;
 >  # 配置文件修改重装载命令：
 >  nginx3 -s reload
 > ```
- 
 启动nginx后我们就可以通过浏览器访问该服务器IP地址，访问web服务了。
-
-  
-
 如果直接访问`http://127.0.0.1/`我们看到的是nginx的默认主页，这是访问的80端口，我们并没有修改。
-
-  
-
 访问`http://127.0.0.1:8080/`这样就是访问我们在子nginx配置文件中给该项目配置的8080端口了。
-
-  
-  
-  
-
 ****
-
-  
-
 ## 感想反思
-
-  
-
 1. 基础是在实践应用中打捞的，Linux的基础命令单纯去背还是很难的，量大，每条命令的使用方法也很多，只有在实际应用中才能逐渐熟悉所常用的命令。刚开始的时候或许需要经常查阅搜索，比较麻烦，熟悉了就感到方便了。
-
 2. 在搭建服务器的过程中涉及到多个模块的组合使用，找到一套想要的Linux服务器搭建流程的文章很简单，但系统、软件版本都在随着时间变更发生变化，直接按着别人的流程走一遍很简单，确未必能得到想要的效果，还会发生各种新的错误报警。我们需要捋顺思路，探究问题。
-
 3. 按照文章去搭建服务器，特别是在学习搭建，在虚拟机操作的时候，一遍流程走下来，发现搭建失败会很烦躁，觉得是有遗漏，顺着文档再走一遍，还是有错，如此反复很容易打击学习的积极性，我们要认识到服务器搭建是多模块的组合，认清每一个模块的作用，学会检验模块是否运行正常，结果有错误不代表所有模块都有问题，找打出问题的点，是模块安装问题、模块调用问题还是模块之间的衔接问题。学会查找问题可以很大的提高我们的学习积极性。
-
-  
-  
-  
-  
-  
-
 [Django+uWSGI+Nginx原理详解](https://www.jianshu.com/p/1c50b15b143a)
-
-  
-
 ```mermaid
-
 graph LR
-
-  
-
 subgraph Web server
-
 B[Nginx]
-
 C[uWSGI]
-
 D[Django项目]
-
 end
-
 subgraph 客户机
-
 A[浏览器]
-
 end
-
 A---B
-
 B---C
-
 C---D
-
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzM3NTQ0NzYsLTEyMjAxNjI1MDAsLT
-M1MDI2MjA2MiwxNTExNDA3OTE4XX0=
+eyJoaXN0b3J5IjpbOTk3MDE5OTY0LC0xMjIwMTYyNTAwLC0zNT
+AyNjIwNjIsMTUxMTQwNzkxOF19
 -->
