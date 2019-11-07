@@ -25,7 +25,7 @@ tags: [Python, Nginx, Django, Linux, web服务器, 环境搭建]
 ## 环境
 
   
-
+![enter image description here](https://picasaweb.google.com/105969624975385667619/6756551244464833249#6756551245645573986 "双葫芦")
 服务器：腾讯云服务器
 
   
@@ -563,7 +563,7 @@ include lanling_nginx.conf;
   
   
   
-  
+  ![enter image description here](https://lh3.googleusercontent.com/cm5TU-aDgtvpP5dQMGf4Gbfj8EX0dxEAOn43HeQ1kuJw2TFbYbY-wfxbJc6ezKtsn13yzNmX2Q0)
 
 [Django+uWSGI+Nginx原理详解](https://www.jianshu.com/p/1c50b15b143a)
 
@@ -599,5 +599,5 @@ C---D
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxMTQwNzkxOF19
+eyJoaXN0b3J5IjpbLTM1MDI2MjA2MiwxNTExNDA3OTE4XX0=
 -->
