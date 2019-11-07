@@ -123,111 +123,41 @@ uwsgi3 -i uwsgi.ini
 >  2. 如何关闭uWSGI：
 > 通过ps，查看uwsgi相关进程
 >  `ps aux|grep uwsgi`
-
 > kill pid会发送SIGTERM，只会导致重启，而不是结束掉。需要发送SIGINT或SIGQUIT，对应着是INT才可以
-
 >  `killall -s INT /usr/local/bin/uwsgi3`
-
-  
-
 > 我在这一步还遇到了通过uWSGI启动django项目失败的情况，原因是CentOS7自带的sqlite3版本太老不支持django现在的版本，解决办法是更新sqlite3，可参考文章：[更新CentOS的SQLite版本](https://www.cnblogs.com/hupingzhi/p/11300049.html)
-
-  
-  
-  
-
 ****
-
-  
-
 ### 安装Nginx和配置nginx.conf文件
-
-  
-
 `cd`回到家目录，下载nginx安装包
-
-  
-
 ```bash
-
 wget http://nginx.org/download/nginx-1.17.3.tar.gz
-
 ```
-
-  
-
 下载完成后，执行解压命令：
-
-  
-
 ```bash
-
 tar -zxvf nginx-1.17.3.tar.gz
-
 ```
-
-  
-
 解压完成后cd进入nginx-1.17.3文件夹，执行以下命令：
-
-  
-
 ```bash
-
 ./configure
-
 make
-
 make install
-
 ```
-
-  
-
 nginx默认安装在`/user/local/nginx`
-
-  
-
 由于CentOS7中默认安装了老版本的nginx，为区分版本，方便实用建立软连接：
-
-  
-
 ```bash
-
 ln -s /usr/local/nginx/sbin/nginx /usr/bin/nginx3
-
 ```
-
-  
-
 这样在命令行中直接使用`nginx3`就是运行我们安装的新版本nginx，`nginx`是系统自带老版本nginx
-
-  
-
 下面我们看一下nginx的配置文件，由于nginx服务可以同时提供多套web服务，我们为了方便对项目的配置，将配套的nginx配置放在对应项目的同目录下，我们在`/home/www/`目录下新建文件`myproject_nginx.conf`,编辑内容如下：
-
-  
-
 ```js
-
 server {
-
 # 对外提供的访问该项目的端口
-
 listen  8080;
-
 # 访问名，填写主机IP或对应解析域名
-
 server_name  127.0.0.1;
-
 charset  utf-8;
-
 client_max_body_size 75M;
-
-  
-
 location / {
-
 # uwsgi_pass是uWSGI提供的端口，根据uwsgi.ini文件中的socket配置填写
 
 # 如果是文件接口：
@@ -412,6 +342,6 @@ C---D
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1NzU2ODAxNiwtMTIyMDE2MjUwMCwtMz
-UwMjYyMDYyLDE1MTE0MDc5MThdfQ==
+eyJoaXN0b3J5IjpbNzQ4ODM2MTQ0LC0xMjIwMTYyNTAwLC0zNT
+AyNjIwNjIsMTUxMTQwNzkxOF19
 -->
